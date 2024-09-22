@@ -1,0 +1,41 @@
+.timer_div {
+    background-color: rgb(138, 253, 253);
+    width: 1550px;
+    height: 100px;
+    border: 2px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; 
+}
+
+/* .main {
+    background-color: rgb(250, 252, 178);
+    width: 1550px;
+    height: 700px;
+    border: 2px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.room {
+    background-color: rgb(182, 252, 125);
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    margin: 5px;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.image-div {
+    width: 50%; 
+    text-align: center; 
+} */
+
+.timer_text {
+    font-size: 34px;
+    font-weight: bold;
+}
