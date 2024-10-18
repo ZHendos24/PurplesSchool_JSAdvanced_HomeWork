@@ -1,56 +1,64 @@
 // Домашнее задание 8. SOLID
 
+function getRandomItem(users){
+    const rndIndex = Math.floor(Math.random() * users.length);
+    return users[rndIndex]
+}
+
 class Billing {
-    constructor(amount) {
-        this.amount = amount;
+    #amount = 1000;
+
+    get amount() {
+        return this.#amount;
     }
 
     calculateTotal() {
-        const units = this.getUnits();
-        if (units) return this.amount * units;
-        return this.amount;
+        return this.#amount;
     }
 }
 
 class FixedBilling extends Billing {
-    constructor(amount) {
-        super(amount);
+    constructor(units) {
+        super();
+        this.units = units;
     }
 
-    getUnits() {
-        return 1;
+    calculateTotal() {
+        if (this.units) return this.amount * this.units;
+        return this.amount;
     }
 }
 
 class HourBilling extends Billing {
-    constructor(amount, hours) {
-        super(amount);
-        this.hours = hours;
+    constructor(user) {
+        super();
+        this.user = user;
     }
 
-    getUnits() {
-        return this.hours;
+    calculateTotal() {
+        if (this.user) return this.amount * this.user.hours;
+        return this.amount;
     }
 }
 
 class ItemBilling extends Billing {
-    constructor(amount, items) {
-        super(amount);
-        this.items = items;
+    constructor(users) {
+        super();
+        this.users = users;
     }
 
-    getUnits() {
-        return this.items;
+    calculateTotal() {
+        if (this.users) return this.amount * this.users.length;
+        return this.amount;
     }
 }
 
-let fixedBilling = new FixedBilling(650, 5);
-let hourBilling = new HourBilling(530, 5);
-let itemBilling = new ItemBilling(370, 3);
+// const billing = new Billing();
 
-console.log(fixedBilling);
-console.log(fixedBilling.calculateTotal());
-console.log(hourBilling);
-console.log(hourBilling.calculateTotal());
-console.log(itemBilling);
-console.log(itemBilling.calculateTotal());
+const f_billing = new FixedBilling(100);
+const h_billing = new HourBilling(getRandomItem(users));
+const i_billing = new ItemBilling(users);
+
+console.log(f_billing.calculateTotal());
+console.log(h_billing.calculateTotal());
+console.log(i_billing.calculateTotal());
