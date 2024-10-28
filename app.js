@@ -1,8 +1,10 @@
 // Домашнее задание 11. Event Loop
 
-// возвращается ошибка: User denied Geolocation
-
 'use strict';
+
+function doSomething(latitude, longitude) {
+    console.log(`Широта: ${latitude}, Долгота: ${longitude}`)
+}
 
 function getCurrentPositionPromise() {
     return new Promise((resolve, reject) => {
@@ -19,7 +21,6 @@ function getCurrentPositionPromise() {
 
 getCurrentPositionPromise()
     .then((coords) => {
-        console.log(`Широта: ${coords.latitude}, Долгота: ${coords.longitude}`);
         doSomething(coords.latitude, coords.longitude);
     })
     .catch((error) => {
