@@ -1,0 +1,20 @@
+{
+  "name": "home_work",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+    "start": "live-server dist",
+    "dev": "npm run build && npm run start"
+  },
+  "keywords": [],
+  "author": "Evgeny Starostin",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "rollup": "^4.25.0"
+  }
+}
